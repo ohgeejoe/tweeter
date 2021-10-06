@@ -1,0 +1,20 @@
+.nav {
+  height: 120x;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  padding: 1.5em;
+  z-index: 2;
+}
+
+.span{
+  font-family: 'Bungee';
+}
+
+.new-tweet-slider {
+  display: flex;
+  align-items: center;
+  float: right;
+  color: #FFFFFF;
+  font-family: 'Source Sans Pro';
+  flex-direction: column;
+}

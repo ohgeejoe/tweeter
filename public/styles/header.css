@@ -1,0 +1,16 @@
+.avatar-pic {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.header{
+  z-index:1;
+  height: 400px;
+  width: "auto";
+  background-color: #404040;
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+  };
+  
