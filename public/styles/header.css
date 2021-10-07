@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   color: white;
+  
 }
 
 .header{
@@ -12,5 +13,7 @@
   width: "auto";
   background-color: #404040;
   background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+  margin-top: 100px;
+  
   };
   

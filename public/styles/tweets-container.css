@@ -1,0 +1,56 @@
+.tweet-article{
+  border: 0.3rem solid;
+  margin-top: 50px;
+}
+
+/* this dosent work as intended atm */
+.tweet-article:hover {
+  box-shadow: 15px 20px pink;
+}
+
+.tweet-avatar {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 50px;
+}
+
+.tweet-name-handle {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+
+}
+
+.tweet-body {
+  border-bottom: solid black 0.1em;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.tweet-article > footer {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+
+}
+
+.fa.fa-flag:hover {
+  color:green;
+}
+
+.fa.fa-retweet:hover {
+  color:green;
+}
+
+.fa.fa-heart:hover {
+  color:green;
+}

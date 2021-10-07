@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets-container.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,6 +34,9 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
+
+    <!-- Timeago Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 
   <body>
@@ -76,29 +80,33 @@
     </section>
 
     <!-- Tweets Submitted Container -->
-    <div id="tweets-container"></div>
-    <article class="tweet">
-          <header>
-            <img src="/images/bird.png" alt="bird" />
-            <h1>Bill Fields</h1>
-            <h2>@MrFields</h2>
-          </header>
-          <div class="tweet-body">
-            <p>
-              little tweet here
-            </p>
-          </div>
-          <footer>
-            <p>
-            10 days ago
-            </p>
-            <span>
-              <i class="fa fa-flag" aria-hidden="true"></i>
-              <i class="fa fa-retweet" aria-hidden="true"></i>
-              <i class="fa fa-heart" aria-hidden="true"></i>
-            </span>
-          </footer>
-        </article>
+    <div id="tweets-container">
+      <!-- <article class="tweet">
+        <header>
+          <div>
+          <img src="./images/profile-hex.png" width="150px"/>
+          <h1>Billy G</h1>
+        </div>
+          <h2>@GabaGoo</h2>
+        </header>
+        <div class="tweet-body">
+          <p>
+            little tweet here
+          </p>
+        </div>
+        <footer>
+          <p>
+          10 days ago
+          </p>
+          <span>
+            <i class="fa fa-flag" aria-hidden="true"></i>
+            <i class="fa fa-retweet" aria-hidden="true"></i>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </span>
+        </footer>
+      </article> -->
+    </div>
+    
   </main>
 
 

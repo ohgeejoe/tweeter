@@ -1,9 +1,12 @@
 .nav {
-  height: 120x;
+  height: 100px;
   background-color: #4056a1;
   color: #FFFFFF;
   padding: 1.5em;
   z-index: 2;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
 }
 
 .span{
