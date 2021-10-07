@@ -8,16 +8,23 @@ $(document).ready(function() {
   //AJAX refactor. form id is submit-tweet
   $("#submit-tweet").submit(function(event)   {
     event.preventDefault();
-    console.log($("#submit-tweet").serialize());
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $("#submit-tweet").serialize(),
-    })
-      .then(function(response) {
-        loadTweets();
-        console.log(response);
-      });
+    const serialize = $(this).serialize().slice(29);
+    if (serialize.length === 0) {
+      alert("You didn't write anything!");
+    } else if (serialize.length > 140) {
+      alert("Your tweet is over 140 characters!");
+    } else {
+      alert("working");
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: $("#submit-tweet").serialize(),
+      })
+        .then(function(response) {
+          loadTweets();
+          console.log(response);
+        });
+    }
   });
 
   //function to prepend tweets to tweets container
