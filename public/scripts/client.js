@@ -26,6 +26,13 @@ $(document).ready(function() {
     }
   });
 
+  //escape function for XSS
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //function to prepend tweets to tweets container
   const renderTweets = function(tweets) {
     //might need to clear?
@@ -47,7 +54,7 @@ $(document).ready(function() {
   </header>
   <div class="tweet-body">
   <p>
-    ${obj.content["text"]}
+    ${escape(obj.content["text"])}
   </p>
 </div>
   
