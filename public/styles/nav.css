@@ -15,9 +15,21 @@
 
 .new-tweet-slider {
   display: flex;
+  flex-direction: row;
   align-items: center;
   float: right;
   color: #FFFFFF;
   font-family: 'Source Sans Pro';
-  flex-direction: column;
+
+}
+
+
+.toggle-btn {
+  height: auto; 
+  width: auto; 
+  max-width: 20px; 
+  max-height: 20px;
+  margin-left: 10px;
+  display: flex;
+  color: #FFFFFF;
 }

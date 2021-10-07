@@ -9,7 +9,7 @@ $(document).ready(function() {
   //AJAX refactor. form id is submit-tweet
   $("#submit-tweet").submit(function(event)   {
     event.preventDefault();
-    const serialize = $(this).serialize().slice(29);
+    const serialize = $(this).serialize().slice(5);
     if (serialize.length === 0) {
       $("#error-container").slideDown("slow");
       $(".error-message").text("You didn't write anything!");
@@ -17,6 +17,7 @@ $(document).ready(function() {
       $("#error-container").slideDown("slow");
       $(".error-message").text("Your tweet is over 140 characters!");
     } else {
+      $("#error-container").hide();
       $.ajax({
         method: "POST",
         url: "/tweets",
@@ -28,6 +29,14 @@ $(document).ready(function() {
         });
     }
   });
+
+  //when nav bar arrow button is pressed, move screen to compose
+  $(".toggle-btn").on("click", function() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $(".new-tweet").offset().top
+  }, 1000);
+});
+
 
   //escape function for XSS
   const escape = function (str) {
@@ -51,8 +60,8 @@ $(document).ready(function() {
   <span class="tweet-avatar">
     <img src=${obj.user["avatars"]}>
     <p class="tweet-name profile">${obj.user["name"]}</p>
-  </span>
   <p class="tweet-name-handle">${obj.user["handle"]}</p>
+  </span>
   </header>
   <div class="tweet-body">
   <p>
