@@ -72,4 +72,17 @@ $(document).ready(function() {
   renderTweets(data);
 });
 
+//AJAX refactor. form id is submit-tweet
+$("#submit-tweet").submit(function(event)   {
+  event.preventDefault(); //prevents refresh/get.post
 
+  //what does the current query string look like?
+
+  //now need to serialize. need help
+  console.log($(this).serialize());
+
+  //AJAX post need help
+  $.post( "ajax/test.html", function( data ) {
+    $( ".result" ).html( data );
+  });
+})
