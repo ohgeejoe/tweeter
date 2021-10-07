@@ -26,3 +26,22 @@
   color: white;
   font-family: "Bungee", sans-serif;
 }
+
+#error-container {
+  display: flex;
+  justify-content: center;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+}
+
+.error-image {
+  height: auto; 
+  width: auto; 
+  max-width: 100px; 
+  max-height: 100px;
+  margin-left: 75px;
+  display: flex;
+}

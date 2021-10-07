@@ -5,14 +5,17 @@
  */
 
 $(document).ready(function() {
+  $("#error-container").hide();
   //AJAX refactor. form id is submit-tweet
   $("#submit-tweet").submit(function(event)   {
     event.preventDefault();
     const serialize = $(this).serialize().slice(29);
     if (serialize.length === 0) {
-      alert("You didn't write anything!");
+      $("#error-container").slideDown("slow");
+      $(".error-message").text("You didn't write anything!");
     } else if (serialize.length > 140) {
-      alert("Your tweet is over 140 characters!");
+      $("#error-container").slideDown("slow");
+      $(".error-message").text("Your tweet is over 140 characters!");
     } else {
       $.ajax({
         method: "POST",
@@ -35,7 +38,6 @@ $(document).ready(function() {
 
   //function to prepend tweets to tweets container
   const renderTweets = function(tweets) {
-    //might need to clear?
     for (let tweet of tweets) {
       $("#tweets-container").prepend(createTweetElement(tweet));
     }
