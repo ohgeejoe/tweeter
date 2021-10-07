@@ -4,19 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-// Fake data taken from initial-tweets.json
 $(document).ready(function() {
   //AJAX refactor. form id is submit-tweet
   $("#submit-tweet").submit(function(event)   {
-    event.preventDefault(); //prevents refresh/get.post
-
-    //what does the current query string look like?
-
-    //now need to serialize. need help
+    event.preventDefault();
     console.log($("#submit-tweet").serialize());
-
-    //AJAX post need help
     $.ajax({
       method: "POST",
       url: "/tweets",
@@ -26,7 +18,6 @@ $(document).ready(function() {
         loadTweets();
         console.log(response);
       });
-
   });
 
   //function to prepend tweets to tweets container
