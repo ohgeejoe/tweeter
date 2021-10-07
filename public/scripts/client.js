@@ -14,7 +14,6 @@ $(document).ready(function() {
     } else if (serialize.length > 140) {
       alert("Your tweet is over 140 characters!");
     } else {
-      alert("working");
       $.ajax({
         method: "POST",
         url: "/tweets",
