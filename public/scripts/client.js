@@ -9,11 +9,13 @@ $(document).ready(function() {
   //AJAX refactor. form id is submit-tweet
   $("#submit-tweet").submit(function(event)   {
     event.preventDefault();
+    //special characters take up more than one counter.
     const serialize = $(this).serialize().slice(5);
-    if (serialize.length === 0) {
+    const textAreaRawLength = $("#tweet-text").val().length;
+    if (textAreaRawLength === 0) {
       $("#error-container").slideDown("slow");
       $(".error-message").text("You didn't write anything!");
-    } else if (serialize.length > 140) {
+    } else if (textAreaRawLength > 140) {
       $("#error-container").slideDown("slow");
       $(".error-message").text("Your tweet is over 140 characters!");
     } else {
@@ -24,6 +26,8 @@ $(document).ready(function() {
         data: $("#submit-tweet").serialize(),
       })
         .then(function(response) {
+          //clear tweet-text textarea, then load
+          $("#tweet-text").val("");
           loadTweets();
           console.log(response);
         });
@@ -47,6 +51,7 @@ $(document).ready(function() {
 
   //function to prepend tweets to tweets container
   const renderTweets = function(tweets) {
+    $("#tweets-container").empty();
     for (let tweet of tweets) {
       $("#tweets-container").prepend(createTweetElement(tweet));
     }
@@ -54,24 +59,30 @@ $(document).ready(function() {
 
   // create tweet element Function should take in a tweet object and return formatted HTML to be appended (pushed) onto tweets containter.
   const createTweetElement = function(obj) {
+    //implementing destructing, useful for calling API and getting JSON data
+    const {
+      user: {avatars,name,handle},
+      content: {text},
+      created_at}
+      = obj;
     const $tweet = `
     <article class="tweet-article">
   <header class="tweet">
   <span class="tweet-avatar">
-    <img src=${obj.user["avatars"]}>
-    <p class="tweet-name profile">${obj.user["name"]}</p>
-  <p class="tweet-name-handle">${obj.user["handle"]}</p>
+    <img src=${avatars}>
+    <p class="tweet-name profile">${name}</p>
+  <p class="tweet-name-handle">${handle}</p>
   </span>
   </header>
   <div class="tweet-body">
   <p>
-    ${escape(obj.content["text"])}
+    ${escape(text)}
   </p>
 </div>
   
   <footer>
           <p>
-          ${timeago.format(obj.created_at)}
+          ${timeago.format(created_at)}
           </p>
           <span>
             <i class="fa fa-flag" aria-hidden="true"></i>
