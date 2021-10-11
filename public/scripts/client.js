@@ -29,7 +29,6 @@ $(document).ready(function() {
           //clear tweet-text textarea, then load
           $("#tweet-text").val("");
           loadTweets();
-          console.log(response);
         });
     }
   });
