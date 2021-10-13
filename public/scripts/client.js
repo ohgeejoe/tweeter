@@ -28,6 +28,8 @@ $(document).ready(function() {
         .then(function(response) {
           //clear tweet-text textarea, then load
           $("#tweet-text").val("");
+          //need to clear counter.
+          $(".counter").text(140);
           loadTweets();
         });
     }
